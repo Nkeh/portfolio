@@ -166,7 +166,7 @@ export default function AdminProjectsPage() {
                   ["Key Features", "keyFeatures", newFeature, setNewFeature],
                   ["Tags", "tags", newTag, setNewTag],
                   ["Images (URLs)", "images", newImage, setNewImage],
-                ] as const).map(([label, field, val, setVal]: [string, "techStack"|"keyFeatures"|"tags"|"images", string, (v: string) => void]) => (
+                ] as const).map(([label, field, val, setVal]) => (
                   <div key={field}>
                     <label className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-widest block mb-2">{label}</label>
                     <div className="flex flex-wrap gap-1.5 mb-2">
