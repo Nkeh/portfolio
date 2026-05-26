@@ -15,5 +15,5 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = await prisma.blog.findUnique({ where: { slug, published: true } });
   if (!post) notFound();
   await prisma.blog.update({ where: { slug }, data: { views: { increment: 1 } } }).catch(() => {});
-  return <BlogPostDetail post={post!} />;
+  return <BlogPostDetail post={{ ...post!, publishedAt: post!.publishedAt.toISOString() }} />;
 }
