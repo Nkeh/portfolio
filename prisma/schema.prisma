@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model About {
+  id           String   @id @default(cuid())
+  fullName     String
+  title        String
+  profileImage String?
+  bio          String
+  skills       String[]
+  interests    String[]
+  mission      String
+  status       String
+  location     String?
+  languages    String[]
+  funFacts     String[]
+  resumeUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Education {
+  id          String    @id @default(cuid())
+  institution String
+  degree      String
+  field       String
+  startDate   DateTime  @db.Date
+  endDate     DateTime? @db.Date
+  current     Boolean   @default(false)
+  description String?
+  gpa         String?
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Experience {
+  id               String    @id @default(cuid())
+  company          String
+  role             String
+  type             String?
+  location         String?
+  startDate        DateTime  @db.Date
+  endDate          DateTime? @db.Date
+  current          Boolean   @default(false)
+  responsibilities String[]
+  achievements     String[]
+  order            Int       @default(0)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Skill {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  category  String
+  level     Int?
+  icon      String?
+  projects  Project[] @relation("ProjectSkills")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Certification {
+  id            String    @id @default(cuid())
+  name          String
+  issuer        String
+  issueDate     DateTime  @db.Date
+  expiryDate    DateTime? @db.Date
+  credentialId  String?
+  credentialUrl String?
+  image         String?
+  order         Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Project {
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  shortDescription String
+  fullDescription  String
+  techStack        String[]
+  projectType      String
+  images           String[]
+  demoUrl          String?
+  githubUrl        String?
+  date             DateTime  @db.Date
+  status           String   @default("Completed")
+  keyFeatures      String[]
+  challenges       String?
+  solutions        String?
+  role             String?
+  tags             String[]
+  videoUrl         String?
+  featured         Boolean  @default(false)
+  skills           Skill[]  @relation("ProjectSkills")
+  order            Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Blog {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String
+  summary     String
+  coverImage  String?
+  author      String   @default("Ransom")
+  publishedAt DateTime @default(now())
+  published   Boolean  @default(false)
+  tags        String[]
+  readingTime String?
+  views       Int      @default(0)
+  likes       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Review {
+  id           String   @id @default(cuid())
+  reviewerName String
+  reviewerRole String
+  organization String
+  content      String
+  rating       Int?
+  image        String?
+  date         DateTime @default(now())
+  featured     Boolean  @default(false)
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
