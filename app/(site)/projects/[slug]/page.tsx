@@ -17,5 +17,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     include: { skills: true },
   });
   if (!project) notFound();
-  return <ProjectDetail project={project} />;
+  // Replace the return line:
+  return <ProjectDetail project={{ ...project!, date: project!.date.toISOString() }} />;
 }

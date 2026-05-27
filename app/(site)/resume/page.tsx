@@ -13,9 +13,28 @@ export default async function ResumePage() {
     prisma.about.findFirst({ select: { resumeUrl: true } }),
   ]);
 
+  // Replace the return line:
   return (
     <ResumeSection
-      data={{ education, experience, skills, certifications, resumeUrl: about?.resumeUrl }}
+      data={{
+        education: education.map(e => ({
+          ...e,
+          startDate: e.startDate.toISOString(),
+          endDate: e.endDate?.toISOString() ?? null,
+        })),
+        experience: experience.map(e => ({
+          ...e,
+          startDate: e.startDate.toISOString(),
+          endDate: e.endDate?.toISOString() ?? null,
+        })),
+        skills,
+        certifications: certifications.map(c => ({
+          ...c,
+          issueDate: c.issueDate.toISOString(),
+          expiryDate: c.expiryDate?.toISOString() ?? null,
+        })),
+        resumeUrl: about?.resumeUrl,
+      }}
     />
   );
 }

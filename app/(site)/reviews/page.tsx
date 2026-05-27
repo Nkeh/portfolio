@@ -8,5 +8,6 @@ export default async function ReviewsPage() {
   const reviews = await prisma.review.findMany({
     orderBy: [{ featured: "desc" }, { order: "asc" }, { date: "desc" }],
   });
-  return <ReviewsSection reviews={reviews} />;
+  // Replace the return line:
+  return <ReviewsSection reviews={reviews.map(r => ({ ...r, date: r.date.toISOString() }))} />;
 }

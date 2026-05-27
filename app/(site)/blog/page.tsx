@@ -14,5 +14,6 @@ export default async function BlogPage() {
       tags: true, readingTime: true, views: true,
     },
   });
-  return <BlogSection posts={posts} />;
+  // Replace the return line:
+  return <BlogSection posts={posts.map(p => ({ ...p, publishedAt: p.publishedAt.toISOString() }))} />;
 }

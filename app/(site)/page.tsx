@@ -37,12 +37,12 @@ export default async function Page() {
   return (
     <HomePage
       about={about || defaultAbout}
-      education={education}
-      experience={experience}
+      education={education.map(e => ({ ...e, startDate: e.startDate.toISOString(), endDate: e.endDate?.toISOString() ?? null }))}
+      experience={experience.map(e => ({ ...e, startDate: e.startDate.toISOString(), endDate: e.endDate?.toISOString() ?? null }))}
       skills={skills}
-      projects={projects}
-      posts={posts}
-      reviews={reviews}
+      projects={projects.map(p => ({ ...p, date: p.date.toISOString() }))}
+      posts={posts.map(p => ({ ...p, publishedAt: p.publishedAt.toISOString() }))}
+      reviews={reviews.map(r => ({ ...r, date: r.date.toISOString() }))}
     />
   );
 }
