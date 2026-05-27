@@ -3,19 +3,61 @@ import "@/styles/globals.css";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: { default: "Ransom — Software Engineer", template: "%s | Ransom" },
-  description: "Portfolio of Bonya Ransom Nkeh Kongnyuy — Software Engineer specializing in full-stack development, AI/ML, and scalable systems.",
-  keywords: ["Software Engineer", "Full-Stack Developer", "AI", "Machine Learning", "Cameroon"],
-  authors: [{ name: "Ransom" }],
-  creator: "Ransom",
+  title: {
+    default: "Bonya Ransom Nkeh Kongnyuy — Software Engineer",
+    template: "%s | Bonya Ransom",
+  },
+  description:
+    "Portfolio of Bonya Ransom Nkeh Kongnyuy — Software Engineer specializing in full-stack development, AI/ML, and scalable systems. Based in Cameroon.",
+  keywords: [
+    "Bonya Ransom",
+    "Bonya Ransom Nkeh Kongnyuy",
+    "Ransom Nkeh",
+    "Software Engineer Cameroon",
+    "Full Stack Developer Cameroon",
+    "AI Developer Cameroon",
+    "Ransom portfolio",
+  ],
+  authors: [{ name: "Bonya Ransom Nkeh Kongnyuy" }],
+  creator: "Bonya Ransom Nkeh Kongnyuy",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Ransom — Software Engineer",
-    description: "Building elegant, scalable software.",
-    siteName: "Ransom Portfolio",
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    title: "Bonya Ransom Nkeh Kongnyuy — Software Engineer",
+    description:
+      "Portfolio of Bonya Ransom Nkeh Kongnyuy — Software Engineer specializing in full-stack development, AI/ML, and scalable systems.",
+    siteName: "Bonya Ransom Nkeh Kongnyuy",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Bonya Ransom Nkeh Kongnyuy — Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bonya Ransom Nkeh Kongnyuy — Software Engineer",
+    description: "Software Engineer specializing in full-stack development, AI/ML, and scalable systems.",
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/og-image.png`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL,
   },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,6 +68,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Bonya Ransom Nkeh Kongnyuy",
+              alternateName: "Ransom",
+              url: process.env.NEXT_PUBLIC_SITE_URL,
+              jobTitle: "Software Engineer",
+              description: "Software Engineer specializing in full-stack development, AI/ML, and scalable systems.",
+              address: { "@type": "PostalAddress", addressCountry: "CM" },
+              sameAs: [
+                "https://github.com/ransom",
+                "https://linkedin.com/in/ransom",
+                "https://twitter.com/ransom",
+              ],
+            }),
+          }}
+        />
         {children}
         <Toaster
           position="bottom-right"
