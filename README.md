@@ -2,7 +2,7 @@
 
 A dynamic, API-driven portfolio built with Next.js 15, Prisma, PostgreSQL, Framer Motion, and Tailwind CSS.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install dependencies
 ```bash
