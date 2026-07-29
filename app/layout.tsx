@@ -13,11 +13,24 @@ export const metadata: Metadata = {
     "Bonya Ransom",
     "Bonya Ransom Nkeh Kongnyuy",
     "Ransom Nkeh",
+    "Nkeh Bonya",
+    "Ransom",
+    "Nkeh",
+    "Bonya",
+    "Kongnyuy",
     "Software Engineer Cameroon",
     "Full Stack Developer Cameroon",
     "AI Developer Cameroon",
     "Ransom portfolio",
   ],
+  icons: {
+    icon: [
+      { url: "favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "favicon_io/apple-touch-icon.png",
+    shortcut: "favicon_io/favicon.ico",
+  },
   authors: [{ name: "Bonya Ransom Nkeh Kongnyuy" }],
   creator: "Bonya Ransom Nkeh Kongnyuy",
   openGraph: {
@@ -37,6 +50,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Bonya Ransom Nkeh Kongnyuy — Software Engineer",
