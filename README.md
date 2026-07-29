@@ -2,7 +2,7 @@
 
 A dynamic, API-driven portfolio built with Next.js 15, Prisma, PostgreSQL, Framer Motion, and Tailwind CSS.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install dependencies
 ```bash
@@ -36,7 +36,7 @@ Admin panel: [http://localhost:3000/admin/login](http://localhost:3000/admin/log
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 app/
   (site)/          # Public portfolio pages
@@ -52,23 +52,23 @@ styles/            # Global CSS + design tokens
 public/            # logo.png, resume.pdf
 ```
 
-## 🎨 Design System
+## Design System
 - **Fonts**: Syne (display) · DM Mono (code) · Outfit (body)
 - **Colors**: `#080A08` background · `#00C853` green accent (from logo)
 - **Components**: All styled via CSS variables in `styles/globals.css`
 
-## 🔧 Customization
+## Customization
 - Edit seed data in `prisma/seed.ts`
 - Update social links in `components/sections/Contact/ContactSection.tsx`
 - Update social links in `components/layout/Footer.tsx`
 - Add/update your `public/logo.png` and `public/resume.pdf`
 
-## 🌐 Deploy to Vercel
+## Deploy to Vercel
 1. Push to GitHub
 2. Import in Vercel → set all env vars
 3. Deploy — `prisma generate` runs automatically via `vercel.json`
 
-## 🔑 Admin Access
+## Admin Access
 - URL: `/admin/login`
 - Credentials: set via `ADMIN_EMAIL` and `ADMIN_PASSWORD` in `.env.local`
 - Run `npm run db:seed` to create the admin account
