@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const SOCIAL = [
-  { icon: Github, href: "https://github.com/ransom", label: "GitHub" },
+  { icon: Github, href: "https://github.com/Nkeh", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/ransom", label: "LinkedIn" },
   { icon: Twitter, href: "https://twitter.com/ransom", label: "Twitter" },
   { icon: Mail, href: "mailto:ransom@example.com", label: "Email" },

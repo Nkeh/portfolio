@@ -168,7 +168,7 @@ async function main() {
       techStack: ["Next.js", "TypeScript", "Python", "FastAPI", "OpenCV", "PostgreSQL", "Docker"],
       projectType: "AI/ML",
       images: ["/projects/ai-dashboard-1.jpg"],
-      githubUrl: "https://github.com/ransom",
+      githubUrl: "https://github.com/Nkeh",
       date: new Date("2024-03-01"),
       status: "Completed",
       keyFeatures: [

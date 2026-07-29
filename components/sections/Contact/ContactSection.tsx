@@ -21,7 +21,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const SOCIAL_LINKS = [
-  { icon: Github, label: "GitHub", href: "https://github.com/ransom", handle: "@ransom" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Nkeh", handle: "@ransom" },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/ransom", handle: "Ransom N." },
   { icon: Twitter, label: "Twitter", href: "https://twitter.com/ransom", handle: "@ransom" },
 ];

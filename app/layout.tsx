@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: "Software Engineer specializing in full-stack development, AI/ML, and scalable systems.",
               address: { "@type": "PostalAddress", addressCountry: "CM" },
               sameAs: [
-                "https://github.com/ransom",
+                "https://github.com/Nkeh",
                 "https://linkedin.com/in/ransom",
                 "https://twitter.com/ransom",
               ],

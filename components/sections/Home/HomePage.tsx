@@ -463,7 +463,7 @@ export default function HomePage({ about, education, experience, skills, project
               ))}
               <div className="flex gap-2 pt-2">
                 {[
-                  { icon: Github, href: "https://github.com/ransom" },
+                  { icon: Github, href: "https://github.com/Nkeh" },
                   { icon: Linkedin, href: "https://linkedin.com/in/ransom" },
                   { icon: Twitter, href: "https://twitter.com/ransom" },
                 ].map(({ icon: Icon, href }) => (
