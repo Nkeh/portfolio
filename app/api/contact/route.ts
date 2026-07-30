@@ -9,15 +9,22 @@ export async function POST(req: Request) {
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
     }
-    // Save to DB
-    const saved = await prisma.message.create({ data: { name, email, subject, message } });
-    // Send email
+
+    let saved = null;
+    try {
+      saved = await prisma.message.create({ data: { name, email, subject, message } });
+    } catch (dbErr) {
+      console.error("DB save failed:", dbErr);
+    }
+
     try {
       await sendContactEmail({ name, email, subject, message });
     } catch (emailErr) {
       console.error("Email send failed:", emailErr);
+      return NextResponse.json({ error: "Email could not be sent" }, { status: 500 });
     }
-    return NextResponse.json({ success: true, id: saved.id });
+
+    return NextResponse.json({ success: true, id: saved?.id ?? null, dbSaved: Boolean(saved) });
   } catch {
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
   }

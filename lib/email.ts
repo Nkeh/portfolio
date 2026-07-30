@@ -7,14 +7,14 @@ export async function sendContactEmail({ name, email, subject, message }: {
 }) {
   const { data, error } = await resend.emails.send({
     from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
-    to: [process.env.PORTFOLIO_OWNER_EMAIL || "ransom@example.com"],
+    to: [process.env.PORTFOLIO_OWNER_EMAIL || "bonyankeh@gmail.com"],
     subject: `[Portfolio] ${subject}`,
     replyTo: email,
     html: `
       <div style="font-family:monospace;max-width:600px;margin:0 auto;background:#080A08;color:#F0F5F0;padding:32px;border:1px solid rgba(0,200,83,0.2);border-radius:4px">
         <div style="border-left:3px solid #00C853;padding-left:16px;margin-bottom:24px">
           <h1 style="font-size:20px;margin:0;color:#00C853">New Message</h1>
-          <p style="color:#8A9E8A;margin:4px 0 0;font-size:13px">ransom.dev portfolio contact form</p>
+          <p style="color:#8A9E8A;margin:4px 0 0;font-size:13px">bonyaransom.me portfolio contact form</p>
         </div>
         <table style="width:100%;border-collapse:collapse;margin-bottom:24px">
           <tr><td style="padding:8px 0;color:#8A9E8A;width:80px;font-size:13px">From:</td><td style="padding:8px 0;color:#F0F5F0">${name}</td></tr>

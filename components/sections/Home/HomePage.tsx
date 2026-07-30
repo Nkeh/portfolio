@@ -447,7 +447,7 @@ export default function HomePage({ about, education, experience, skills, project
             {/* Info */}
             <FadeIn delay={0.1} className="lg:col-span-2 space-y-6">
               {[
-                { icon: Mail, label: "Email", val: "ransom@example.com", href: "mailto:ransom@example.com" },
+                { icon: Mail, label: "Email", val: "bonyankeh@gmail.com", href: "mailto:bonyankeh@gmail.com" },
                 { icon: MapPin, label: "Location", val: about.location || "Cameroon 🇨🇲", href: null },
               ].map(({ icon: Icon, label, val, href }) => (
                 <div key={label} className="flex items-center gap-4">

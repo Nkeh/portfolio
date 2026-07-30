@@ -21,13 +21,14 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const SOCIAL_LINKS = [
-  { icon: Github, label: "GitHub", href: "https://github.com/Nkeh", handle: "@ransom" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/ransom", handle: "Ransom N." },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com/ransom", handle: "@ransom" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Nkeh", handle: "@Nkeh" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/ransom", handle: "Nkeh Bonya" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com/ransom", handle: "@bonyankeh" },
 ];
 
 const CONTACT_INFO = [
-  { icon: Mail, label: "Email", value: "ransom@example.com", href: "mailto:ransom@example.com" },
+  { icon: Mail, label: "Email", value: "bonyankeh@gmail.com", href: "mailto:bonyankeh@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+237 652 224 850", href: "tel:+237652224850" },
   { icon: MapPin, label: "Location", value: "Cameroon 🇨🇲", href: null },
 ];
 

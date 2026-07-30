@@ -6,7 +6,7 @@ const SOCIAL = [
   { icon: Github, href: "https://github.com/Nkeh", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/ransom", label: "LinkedIn" },
   { icon: Twitter, href: "https://twitter.com/ransom", label: "Twitter" },
-  { icon: Mail, href: "mailto:ransom@example.com", label: "Email" },
+  { icon: Mail, href: "mailto:bonyankeh@gmail.com", label: "Email" },
 ];
 const NAV = [
   { label: "About", href: "/" }, { label: "Resume", href: "/resume" },
