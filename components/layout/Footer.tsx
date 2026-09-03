@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone} from "lucide-react";
+import XLogoIcon from "@/components/ui/XLogoIcon";
 
 const SOCIAL = [
   { icon: Github, href: "https://github.com/Nkeh", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/ransom", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/ransom", label: "Twitter" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/bonya-rnk/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:bonyankeh@gmail.com", label: "Email" },
+  { icon: Phone, href: "tel:+237652224850", label: "Phone" },
+  { icon: XLogoIcon, href: "https://x.com/bonyankeh", label: "X" },
 ];
 const NAV = [
   { label: "About", href: "/" }, { label: "Resume", href: "/resume" },

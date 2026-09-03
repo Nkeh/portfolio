@@ -7,9 +7,10 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   ArrowRight, Download, MapPin, Globe, ChevronLeft, ChevronRight,
   ExternalLink, Github, Star, Clock, Eye, Send, Loader2,
-  CheckCircle, Zap, GraduationCap, Briefcase, Mail, Linkedin, Twitter,
+  CheckCircle, Zap, GraduationCap, Briefcase, Mail, Linkedin, Phone,
   BookOpen, MessageSquare, Code2
 } from "lucide-react";
+import XLogoIcon from "@/components/ui/XLogoIcon";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -448,6 +449,7 @@ export default function HomePage({ about, education, experience, skills, project
             <FadeIn delay={0.1} className="lg:col-span-2 space-y-6">
               {[
                 { icon: Mail, label: "Email", val: "bonyankeh@gmail.com", href: "mailto:bonyankeh@gmail.com" },
+                { icon: Phone, label: "Phone", val: "+237 652 22 48 50", href: "tel:+237652224850" },
                 { icon: MapPin, label: "Location", val: about.location || "Cameroon 🇨🇲", href: null },
               ].map(({ icon: Icon, label, val, href }) => (
                 <div key={label} className="flex items-center gap-4">
@@ -464,8 +466,8 @@ export default function HomePage({ about, education, experience, skills, project
               <div className="flex gap-2 pt-2">
                 {[
                   { icon: Github, href: "https://github.com/Nkeh" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/ransom" },
-                  { icon: Twitter, href: "https://twitter.com/ransom" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/bonya-rnk/" },
+                  { icon: XLogoIcon, href: "https://x.com/bonyankeh" },
                 ].map(({ icon: Icon, href }) => (
                   <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                     className="w-9 h-9 flex items-center justify-center border border-[var(--border-default)] text-[var(--text-muted)] hover:text-[var(--green)] hover:border-[var(--green)] hover:bg-[var(--green-dim)] transition-all rounded-sm">

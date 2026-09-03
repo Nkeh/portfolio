@@ -7,9 +7,10 @@ import { z } from "zod";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import {
-  Mail, Phone, MapPin, Github, Linkedin, Twitter,
+  Mail, Phone, MapPin, Github, Linkedin,
   Send, Loader2, CheckCircle
 } from "lucide-react";
+import XLogoIcon from "@/components/ui/XLogoIcon";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/Motion";
 
 const schema = z.object({
@@ -22,8 +23,8 @@ type FormData = z.infer<typeof schema>;
 
 const SOCIAL_LINKS = [
   { icon: Github, label: "GitHub", href: "https://github.com/Nkeh", handle: "@Nkeh" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/ransom", handle: "Nkeh Bonya" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com/ransom", handle: "@bonyankeh" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/bonya-rnk/", handle: "Nkeh Bonya" },
+  { icon: XLogoIcon, label: "X", href: "https://x.com/bonyankeh", handle: "@bonyankeh" },
 ];
 
 const CONTACT_INFO = [

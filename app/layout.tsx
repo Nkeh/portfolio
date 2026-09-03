@@ -97,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               address: { "@type": "PostalAddress", addressCountry: "CM" },
               sameAs: [
                 "https://github.com/Nkeh",
-                "https://linkedin.com/in/ransom",
+                "https://www.linkedin.com/in/bonya-rnk/",
                 "https://twitter.com/ransom",
               ],
             }),
